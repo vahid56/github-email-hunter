@@ -1,4 +1,4 @@
-# GitHub Email Hunter
+# 📧 GitHub Email Hunter
 
 Find a GitHub user's public email by scanning their commits — no scraping, just the GitHub API.
 
@@ -6,13 +6,13 @@ Find a GitHub user's public email by scanning their commits — no scraping, jus
 uv run -m ghmail <username>
 ```
 
-Example:
+**Example**
 
 ```bash
 uv run -m ghmail torvalds
 ```
 
-Output:
+**Output**
 
 ```text
 [*] Fetching torvalds's repos...
@@ -22,32 +22,36 @@ Output:
 [✓] Email found: someone@example.com
 ```
 
-That's it. If an email is publicly exposed in any of the user's commits, this will likely find it.
+That's it. If an email is publicly exposed in any of the user's commits, this will likely find it. 🎯
 
 ---
 
-## Install
+## 🚀 Install
 
 ```bash
-clone https://github.com/vahid56/github-email-hunter
+git clone https://github.com/vahid56/github-email-hunter
 cd github-email-hunter
 uv sync
 uv run -m ghmail <username>
 ```
 
-## Recommended: add a token
+> Requires [uv](https://docs.astral.sh/uv/). It handles the environment and dependencies for you.
 
-Without a token, GitHub limits you to **60 requests/hour** — not enough for most users. Create a `.env` file next to the script:
+---
+
+## 🔑 Recommended: add a token
+
+Without a token, GitHub limits you to **60 requests/hour** — not enough for most users. Create a `.env` file in the project root:
 
 ```env
 GITHUB_TOKEN=ghp_yourPersonalAccessTokenHere
 ```
 
-No scopes needed. A plain token works fine for public data.
+No scopes needed. A plain token works fine for public data. ✅
 
 ---
 
-## Want to know more?
+## 🧠 Want to know more?
 
 **How it works**
 
@@ -59,10 +63,16 @@ No scopes needed. A plain token works fine for public data.
 
 **Limits**
 
-- Checks up to **10 repos** and **5 commit pages per repo** — tunable in `find_email()` and `get_commits()`.
-- Only works if the user's commits actually expose a real email. Many people hide theirs or use `users.noreply.github.com`.
-- 0.5s delay between paginated requests when no token is set.
+- 🔍 Checks up to **10 repos** and **5 commit pages per repo** — tunable in `find_email()` and `get_commits()`.
+- 🕵️ Only works if the user's commits actually expose a real email. Many people hide theirs or use `users.noreply.github.com`.
+- ⏱️ 0.5s delay between paginated requests when no token is set.
 
 **Heads up**
 
-This is an OSINT tool. Use it only on accounts you own or have permission to investigate. Respect GitHub's ToS and local privacy laws.
+This is an OSINT tool. Use it only on accounts you own or have permission to investigate. Respect GitHub's ToS and local privacy laws. ⚖️
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE).
