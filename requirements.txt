@@ -1,0 +1,5 @@
+# Direct dependencies for pip users.
+# For a fresh install prefer:  pip install .
+python-dotenv>=1.0.1
+requests>=2.32.0
+rich>=15.0.0

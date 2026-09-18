@@ -1,11 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "github-email-hunter"
 version = "0.1.0"
-description = "An OSINT GitHub tool"
+description = "Find a GitHub user's public email by scanning their commits."
 readme = "README.md"
 requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENCE"]
+keywords = ["osint", "github", "email", "cli", "recon"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
 dependencies = [
-    "dotenv>=0.9.9",
-    "requests>=2.34.2",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.0",
     "rich>=15.0.0",
 ]
+
+[project.scripts]
+ghmail = "ghmail.cli:main"
+
+[tool.setuptools]
+packages = ["ghmail"]
+py-modules = []
